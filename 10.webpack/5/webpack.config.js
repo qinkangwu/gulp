@@ -18,6 +18,12 @@ module.exports = {
         hot: true,
         inline: true,
         progress: true,
+        proxy: {
+            '/api/*': {
+                target: 'http://localhost:5000',
+                secure: false
+            }
+        }
     },
     module: {
         loaders: [
@@ -40,6 +46,7 @@ module.exports = {
             }
         ]
     },
+    devtool: 'eval-source-map',
     //添加我们的插件 会自动生成一个html文件
     plugins: [
         new htmlWebpackPlugin({
