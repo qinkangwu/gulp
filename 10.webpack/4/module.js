@@ -1,0 +1,1 @@
+module.exports = 'hello world by module.js';
